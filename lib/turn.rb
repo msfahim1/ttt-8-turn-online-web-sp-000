@@ -37,6 +37,7 @@ end
 def turn(board)
   puts "Please enter 1-9:"
   index = input_to_index(gets.strip)
+<<<<<<< HEAD
   until valid_move?(board, index) == true
     puts "please try a valid move. Use an empty location 1 through 9"
     puts "Please enter 1-9:"
@@ -45,5 +46,14 @@ def turn(board)
   end
   move(board, index, character = "X")
   display_board(board)
+=======
+  if index.between?(0,8) && !position_taken?(board, index)
+      puts 'this is a valid move'
+    return true
+  else
+   return false
+  end
+
+>>>>>>> 4a0c3ebb02064cd28091e93bdae5579c895963c7
 
 end
