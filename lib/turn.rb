@@ -34,13 +34,16 @@ def position_taken?(board, index)
   end
 end
 
-def turn
+def turn(board)
   puts "Please enter 1-9:"
-  user_input = get.strip
-  input_to_index(user_input)
-  if valid_move?(index)
-    move(board, index, token)
-  else
+  index = input_to_index(gets.strip)
+  until valid_move?(board, index) == true
+    puts "please try a valid move. Use an empty location 1 through 9"
     puts "Please enter 1-9:"
+    user_input = gets.strip
+    index = input_to_index(user_input)
+  end
+  move(board, index, character = "X")
+  display_board(board)
 
 end
